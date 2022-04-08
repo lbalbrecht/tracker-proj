@@ -10,22 +10,26 @@ Exercise.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-            },
-            name: {
+        },
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
-            },
-            body_group: {
+        },
+        body_part: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
+        },
+        body_group: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id',
             },
-            user_id: {
-                type: DataTypes.INTEGER,
-                references: {
-                    model: 'User',
-                    key: 'id',
-                },
-            },
+        },
     },
     {
         sequelize,
